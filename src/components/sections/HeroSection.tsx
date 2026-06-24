@@ -40,7 +40,7 @@ const HeroSection = ({ scrollToSection }: HeroProps) => {
                             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6"
                         >
                             <Zap className="size-4 text-cyan-400" />
-                            <span className="text-sm text-cyan-400">Available for freelance work</span>
+                            <span className="text-sm text-cyan-400">Available for Full-time / Freelance work</span>
                         </motion.div>
 
                         <motion.h1
@@ -68,7 +68,7 @@ const HeroSection = ({ scrollToSection }: HeroProps) => {
                             className="text-lg text-slate-500 mb-6 leading-relaxed"
                         >
                             Building scalable, high-performance web applications with modern technologies.
-                            Specialized in ReactJS, NextJS, Node.js, and cloud architecture with 5+ years of experience
+                            Specialized in ReactJS, NextJS, Node.js, and Express.js with 5+ years of experience
                             delivering enterprise solutions.
                         </motion.p>
 

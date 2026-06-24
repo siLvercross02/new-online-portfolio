@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion, type Variants } from 'motion/react';
 
 interface LogoProps {
     className?: string;
@@ -6,18 +6,25 @@ interface LogoProps {
 }
 
 export function Logo({ className = '', animated = true }: LogoProps) {
-    const pathVariants = {
-        hidden: { pathLength: 0, opacity: 0 },
+    const pathVariants: Variants = {
+        hidden: {
+            pathLength: 0,
+            opacity: 0,
+        },
         visible: {
             pathLength: 1,
             opacity: 1,
             transition: {
-                pathLength: { duration: 2, ease: "easeInOut" },
-                opacity: { duration: 0.5 }
-            }
-        }
+                pathLength: {
+                    duration: 2,
+                    ease: "easeInOut",
+                },
+                opacity: {
+                    duration: 0.5,
+                },
+            },
+        },
     };
-
     const Wrapper = animated ? motion.svg : 'svg';
     const Path = animated ? motion.path : 'path';
 

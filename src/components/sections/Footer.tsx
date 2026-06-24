@@ -1,6 +1,6 @@
 import { LuGithub, LuLinkedin } from 'react-icons/lu'
 import { Mail, Code2 } from 'lucide-react'
-import { Logo } from '../../components/others/Logo'
+import LogoNew from "../../assets/Joe-new-logo-dark.png"
 
 interface FooterProps {
     scrollToSection: (label: string) => void;
@@ -14,7 +14,8 @@ const Footer = ({ scrollToSection }: FooterProps) => {
                     {/* Brand */}
                     <div className="md:col-span-2">
                         <div className="flex items-center gap-3 mb-3">
-                            <Logo className="size-12" animated={false} />
+                            <img src={LogoNew} alt="Joemari H. Supan" className="size-12" />
+                            {/* <Logo className="size-12" animated={false} /> */}
                             <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                                 Joemari H. Supan
                             </div>

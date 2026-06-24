@@ -1,7 +1,13 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
-import { CheckCircle2, ExternalLink, ArrowRight } from 'lucide-react';
+import { CheckCircle2, ExternalLink, ArrowDown } from 'lucide-react';
 
 const ProjectsSection = () => {
+    const [showAll, setShowAll] = useState(false);
+    const [selectedProject, setSelectedProject] = useState<{
+        title: string;
+        images: string[];
+    } | null>(null);
 
     const projects = [
         {
@@ -10,7 +16,9 @@ const ProjectsSection = () => {
             tech: ['NextJS', 'TypeScript', 'TailwindCSS', 'React-Query'],
             image: '../src/assets/bon-laundry-web.png',
             highlights: ['Online booking system', 'Self-service, drop-off & delivery', 'Companion admin dashboard'],
-            link: 'https://bonlaundrystation.com/'
+            link: 'https://bonlaundrystation.com/',
+            images: [],
+            hasLiveDemo: true
         },
         {
             title: 'Bon Laundry Admin Dashboard',
@@ -18,7 +26,9 @@ const ProjectsSection = () => {
             tech: ['NextJS', 'TailwindCSS', 'React-Query', 'NodeJS', 'MongoDB'],
             image: '../src/assets/bon-laundry-admin.png',
             highlights: ['Branch & service management', 'Real-time booking monitor', 'Blog content editor'],
-            link: '#'
+            link: '#',
+            images: ['../src/assets/bon-laundry-admin-order.png', '../src/assets/bon-laundry-admin-branch.png', '../src/assets/bon-laundry-admin-login.png'],
+            hasLiveDemo: false
         },
         {
             title: 'Incon Industrial Corporation Website',
@@ -26,7 +36,9 @@ const ProjectsSection = () => {
             tech: ['NextJS', 'Bootstrap', 'Redux', 'Strapi'],
             image: '../src/assets/incon-website.png',
             highlights: ['Product catalogue pages', 'Company history & standards', '40-year manufacturing brand'],
-            link: 'https://www.inconindustrial.com/'
+            link: 'https://www.inconindustrial.com/',
+            images: [],
+            hasLiveDemo: true
         },
         {
             title: 'Affinity Capital Corp',
@@ -34,7 +46,9 @@ const ProjectsSection = () => {
             tech: ['ReactJS', 'Ant Design', 'Redux'],
             image: '../src/assets/Affinity-portfolio.PNG',
             highlights: ['NAVPU/NAVPS fund data', 'Client Portal', 'SEC-regulated finance sites'],
-            link: 'https://affinitycorp.net/'
+            link: 'https://affinitycorp.net/',
+            images: [],
+            hasLiveDemo: true
         },
         {
             title: 'Meta Phil-Tech Corp',
@@ -42,7 +56,9 @@ const ProjectsSection = () => {
             tech: ['NextJS', 'Reactstrap', 'Lottie-React'],
             image: '../src/assets/meta-website.png',
             highlights: ['Multi-service catalogue', 'Portfolio & inquiry flow', 'Conversion-focused layou'],
-            link: 'https://meta-phil-corp.vercel.app/'
+            link: 'https://meta-phil-corp.vercel.app/',
+            images: [],
+            hasLiveDemo: true
         },
         {
             title: 'Car Hub (Tutorial Build)',
@@ -50,7 +66,9 @@ const ProjectsSection = () => {
             tech: ['NextJS', 'TailwindCSS', 'TypeScript'],
             image: '../src/assets/car-showcase.png',
             highlights: ['Filterable car catalogue', 'Per-vehicle detail view', 'Front-end UI practice'],
-            link: 'https://nextjs-car-showcase-two.vercel.app/'
+            link: 'https://nextjs-car-showcase-two.vercel.app/',
+            images: [],
+            hasLiveDemo: true
         },
         {
             title: 'GPT-3 Demo (Tutorial Build)',
@@ -58,7 +76,9 @@ const ProjectsSection = () => {
             tech: ['ReactJS', 'CSS'],
             image: '../src/assets/gpt3-app.png',
             highlights: ['Learning project', 'Front-end UI practice'],
-            link: 'https://gpt3-demo.netlify.app/'
+            link: 'https://gpt3-demo.netlify.app/',
+            images: [],
+            hasLiveDemo: true
         },
         {
             title: 'Klick.VPN',
@@ -66,7 +86,9 @@ const ProjectsSection = () => {
             tech: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
             image: '../src/assets/klickvpn.png',
             highlights: ['Tiered subscription pricing'],
-            link: 'https://klickvpn.netlify.app/'
+            link: 'https://klickvpn.netlify.app/',
+            images: [],
+            hasLiveDemo: true
         },
         {
             title: 'Communifi (Not in Production)',
@@ -74,7 +96,9 @@ const ProjectsSection = () => {
             tech: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
             image: '../src/assets/communifi.png',
             highlights: ['Step-by-step connect guide', 'Pre-registration form', 'Shelved on company closure'],
-            link: 'https://communitalk.netlify.app/'
+            link: 'https://communitalk.netlify.app/',
+            images: [],
+            hasLiveDemo: true
         },
         {
             title: 'Communitalk (Not in Production)',
@@ -82,7 +106,9 @@ const ProjectsSection = () => {
             tech: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
             image: '../src/assets/communitalk.png',
             highlights: ['Simple landing page'],
-            link: 'https://communitalk.netlify.app/'
+            link: 'https://communitalk.netlify.app/',
+            images: [],
+            hasLiveDemo: true
         },
         {
             title: 'Klick StreamZones (Not in Production)',
@@ -90,9 +116,13 @@ const ProjectsSection = () => {
             tech: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
             image: '../src/assets/klickstreamzone.png',
             highlights: ['Simple landing page', 'Featured channel carousel', 'Categorized video feed'],
-            link: 'https://klickstreamzones.netlify.app/'
+            link: 'https://klickstreamzones.netlify.app/',
+            images: [],
+            hasLiveDemo: true
         },
     ];
+
+    const visibleProjects = showAll ? projects : projects.slice(0, 4);
 
     return (
         <>
@@ -121,7 +151,7 @@ const ProjectsSection = () => {
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-8">
-                        {projects.map((project, index) => (
+                        {visibleProjects.map((project, index) => (
                             <motion.div
                                 key={project.title}
                                 initial={{ opacity: 0, y: 30 }}
@@ -139,8 +169,8 @@ const ProjectsSection = () => {
                                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent" />
 
                                     {/* Overlay badge */}
-                                    <div className="absolute top-4 right-4 px-3 py-1 rounded-lg bg-cyan-500/20 backdrop-blur-sm border border-cyan-500/30">
-                                        <span className="text-xs text-cyan-400">Featured</span>
+                                    <div className="absolute top-4 right-4 px-3 py-1 rounded-lg bg-slate-800/50 backdrop-blur-sm border border-slate-700/50">
+                                        <span className="text-xs text-white">Featured</span>
                                     </div>
                                 </div>
 
@@ -149,12 +179,28 @@ const ProjectsSection = () => {
                                         <h3 className="text-xl font-semibold text-slate-100 group-hover:text-cyan-400 transition-colors">
                                             {project.title}
                                         </h3>
-                                        <a
-                                            href={project.link}
-                                            className="size-9 rounded-lg bg-slate-700/50 hover:bg-cyan-500/20 border border-slate-600 hover:border-cyan-500 flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-all opacity-0 group-hover:opacity-100"
-                                        >
-                                            <ExternalLink className="size-4" />
-                                        </a>
+                                        {project.hasLiveDemo ? (
+                                            <a
+                                                href={project.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="size-9 rounded-lg bg-slate-700/50 hover:bg-cyan-500/20 border border-slate-600 hover:border-cyan-500 flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-all opacity-0 group-hover:opacity-100"
+                                            >
+                                                <ExternalLink className="size-4" />
+                                            </a>
+                                        ) : (
+                                            <button
+                                                onClick={() =>
+                                                    setSelectedProject({
+                                                        title: project.title,
+                                                        images: project.images,
+                                                    })
+                                                }
+                                                className="size-9 rounded-lg bg-slate-700/50 hover:bg-cyan-500/20 border border-slate-600 hover:border-cyan-500 flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-all opacity-0 group-hover:opacity-100"
+                                            >
+                                                <ExternalLink className="size-4" />
+                                            </button>
+                                        )}
                                     </div>
 
                                     <p className="text-slate-400 mb-4 text-sm leading-relaxed">
@@ -197,11 +243,60 @@ const ProjectsSection = () => {
                         viewport={{ once: true }}
                         className="text-center mt-12"
                     >
-                        <button className="group px-8 py-3 border border-slate-700 rounded-lg hover:border-cyan-500 hover:bg-cyan-500/10 transition-all flex items-center gap-2 mx-auto">
-                            View All Projects
-                            <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
+                        <button
+                            onClick={() => setShowAll(!showAll)}
+                            className="group px-8 py-3 border border-slate-700 rounded-lg hover:border-cyan-500 hover:bg-cyan-500/10 transition-all flex items-center gap-2 mx-auto"
+                        >
+                            {showAll ? 'Show Less' : 'View All Projects'}
+                            <ArrowDown
+                                className={`size-4 transition-transform ${showAll ? 'rotate-180' : 'group-hover:translate-x-1'
+                                    }`}
+                            />
                         </button>
                     </motion.div>
+
+                    {/* Modal Image */}
+                    {selectedProject && (
+                        <div
+                            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm overflow-y-auto p-6"
+                            onClick={() => setSelectedProject(null)}
+                        >
+                            <div
+                                className="max-w-6xl mx-auto"
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                <div className="flex items-center justify-between mb-6">
+                                    <h3 className="text-2xl font-semibold text-white">
+                                        {selectedProject.title}
+                                    </h3>
+
+                                    <button
+                                        onClick={() => setSelectedProject(null)}
+                                        className="size-10 rounded-lg bg-slate-800 hover:bg-slate-700 text-white"
+                                    >
+                                        ✕
+                                    </button>
+                                </div>
+
+                                {selectedProject.images.length > 0 ? (
+                                    <div className="grid gap-6">
+                                        {selectedProject.images.map((image, index) => (
+                                            <img
+                                                key={index}
+                                                src={image}
+                                                alt={`${selectedProject.title}-${index}`}
+                                                className="w-full rounded-xl border border-slate-700"
+                                            />
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <div className="text-center py-20 text-slate-400">
+                                        No screenshots available yet.
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    )}
                 </motion.div>
             </div>
         </>
