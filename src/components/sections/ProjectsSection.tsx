@@ -1,6 +1,20 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { CheckCircle2, ExternalLink, ArrowDown } from 'lucide-react';
+import BonLaundry from "../../assets/bon-laundry-web.png";
+import BonAdmin from "../../assets/bon-laundry-admin.png";
+import BonAdminOrder from "../../assets/bon-laundry-admin-order.png";
+import BonAdminBranch from "../../assets/bon-laundry-admin-branch.png";
+import BonAdminLogin from "../../assets/bon-laundry-admin-branch.png";
+import InconWeb from "../../assets/incon-website.png";
+import AffinityWeb from "../../assets/Affinity-portfolio.png";
+import MetaPhilWeb from "../../assets/meta-website.png";
+import CarHub from "../../assets/car-showcase.png";
+import GPTWeb from "../../assets/gpt3-app.png";
+import KlickVPN from "../../assets/klickvpn.png";
+import Communifi from "../../assets/communifi.png";
+import CommuniTalk from "../../assets/communitalk.png";
+import KlickStreamWeb from "../../assets/klickstreamzone.png";
 
 const ProjectsSection = () => {
     const [showAll, setShowAll] = useState(false);
@@ -14,7 +28,7 @@ const ProjectsSection = () => {
             title: 'Bon Laundry Station',
             description: 'Customer-facing website for a laundry service, with online booking for self-service, drop-off, and pick-up & delivery.',
             tech: ['NextJS', 'TypeScript', 'TailwindCSS', 'React-Query'],
-            image: '../src/assets/bon-laundry-web.png',
+            image: BonLaundry,
             highlights: ['Online booking system', 'Self-service, drop-off & delivery', 'Companion admin dashboard'],
             link: 'https://bonlaundrystation.com/',
             images: [],
@@ -24,17 +38,17 @@ const ProjectsSection = () => {
             title: 'Bon Laundry Admin Dashboard',
             description: 'Internal admin panel for the Bon Laundry Station team to manage day-to-day operations.',
             tech: ['NextJS', 'TailwindCSS', 'React-Query', 'NodeJS', 'MongoDB'],
-            image: '../src/assets/bon-laundry-admin.png',
+            image: BonAdmin,
             highlights: ['Branch & service management', 'Real-time booking monitor', 'Blog content editor'],
             link: '#',
-            images: ['../src/assets/bon-laundry-admin-order.png', '../src/assets/bon-laundry-admin-branch.png', '../src/assets/bon-laundry-admin-login.png'],
+            images: [BonAdminOrder, BonAdminBranch, BonAdminLogin],
             hasLiveDemo: false
         },
         {
             title: 'Incon Industrial Corporation Website',
             description: 'Corporate site for a plastic packaging manufacturer serving the personal care and pharmaceutical industries.',
             tech: ['NextJS', 'Bootstrap', 'Redux', 'Strapi'],
-            image: '../src/assets/incon-website.png',
+            image: InconWeb,
             highlights: ['Product catalogue pages', 'Company history & standards', '40-year manufacturing brand'],
             link: 'https://www.inconindustrial.com/',
             images: [],
@@ -44,7 +58,7 @@ const ProjectsSection = () => {
             title: 'Affinity Capital Corp',
             description: 'Website for a licensed mutual fund distribution company, letting users browse fund options and start investing.',
             tech: ['ReactJS', 'Ant Design', 'Redux'],
-            image: '../src/assets/Affinity-portfolio.PNG',
+            image: AffinityWeb,
             highlights: ['NAVPU/NAVPS fund data', 'Client Portal', 'SEC-regulated finance sites'],
             link: 'https://affinitycorp.net/',
             images: [],
@@ -54,7 +68,7 @@ const ProjectsSection = () => {
             title: 'Meta Phil-Tech Corp',
             description: 'Corporate site for an ICT and technical services provider — structured cabling, surveillance, solar, and software development.',
             tech: ['NextJS', 'Reactstrap', 'Lottie-React'],
-            image: '../src/assets/meta-website.png',
+            image: MetaPhilWeb,
             highlights: ['Multi-service catalogue', 'Portfolio & inquiry flow', 'Conversion-focused layou'],
             link: 'https://meta-phil-corp.vercel.app/',
             images: [],
@@ -64,7 +78,7 @@ const ProjectsSection = () => {
             title: 'Car Hub (Tutorial Build)',
             description: 'A car rental showcase built from a tutorial to practice Next.js and Tailwind CSS on the front end.',
             tech: ['NextJS', 'TailwindCSS', 'TypeScript'],
-            image: '../src/assets/car-showcase.png',
+            image: CarHub,
             highlights: ['Filterable car catalogue', 'Per-vehicle detail view', 'Front-end UI practice'],
             link: 'https://nextjs-car-showcase-two.vercel.app/',
             images: [],
@@ -74,7 +88,7 @@ const ProjectsSection = () => {
             title: 'GPT-3 Demo (Tutorial Build)',
             description: 'A demo site built from a tutorial to explore early integration with the GPT-3 AI API.',
             tech: ['ReactJS', 'CSS'],
-            image: '../src/assets/gpt3-app.png',
+            image: GPTWeb,
             highlights: ['Learning project', 'Front-end UI practice'],
             link: 'https://gpt3-demo.netlify.app/',
             images: [],
@@ -84,7 +98,7 @@ const ProjectsSection = () => {
             title: 'Klick.VPN',
             description: 'VPN service site built for Pil-Chi Telecoms, giving users secure, low-latency access to PH-restricted content from any device.',
             tech: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
-            image: '../src/assets/klickvpn.png',
+            image: KlickVPN,
             highlights: ['Tiered subscription pricing'],
             link: 'https://klickvpn.netlify.app/',
             images: [],
@@ -94,7 +108,7 @@ const ProjectsSection = () => {
             title: 'Communifi (Not in Production)',
             description: 'Affordable Wi-Fi service site for Pil-Chi Telecoms, offering free monthly data with simple connect-and-go onboarding.',
             tech: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
-            image: '../src/assets/communifi.png',
+            image: Communifi,
             highlights: ['Step-by-step connect guide', 'Pre-registration form', 'Shelved on company closure'],
             link: 'https://communitalk.netlify.app/',
             images: [],
@@ -104,7 +118,7 @@ const ProjectsSection = () => {
             title: 'Communitalk (Not in Production)',
             description: 'Affordable free-call service site for Pil-Chi Telecoms, with a pre-registration flow for early sign-ups.',
             tech: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
-            image: '../src/assets/communitalk.png',
+            image: CommuniTalk,
             highlights: ['Simple landing page'],
             link: 'https://communitalk.netlify.app/',
             images: [],
@@ -114,7 +128,7 @@ const ProjectsSection = () => {
             title: 'Klick StreamZones (Not in Production)',
             description: 'Free streaming hub for Pil-Chi Telecoms, aggregating live Philippine news and TV channels in one place.',
             tech: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
-            image: '../src/assets/klickstreamzone.png',
+            image: KlickStreamWeb,
             highlights: ['Simple landing page', 'Featured channel carousel', 'Categorized video feed'],
             link: 'https://klickstreamzones.netlify.app/',
             images: [],
