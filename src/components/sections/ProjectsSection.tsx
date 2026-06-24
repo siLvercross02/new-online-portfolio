@@ -7,7 +7,7 @@ import BonAdminOrder from "../../assets/bon-laundry-admin-order.png";
 import BonAdminBranch from "../../assets/bon-laundry-admin-branch.png";
 import BonAdminLogin from "../../assets/bon-laundry-admin-branch.png";
 import InconWeb from "../../assets/incon-website.png";
-import AffinityWeb from "../../assets/Affinity-portfolio.png";
+import AffinityWeb from "../../assets/Affinity-web.png";
 import MetaPhilWeb from "../../assets/meta-website.png";
 import CarHub from "../../assets/car-showcase.png";
 import GPTWeb from "../../assets/gpt3-app.png";
