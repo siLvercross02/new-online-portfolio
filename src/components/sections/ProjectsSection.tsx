@@ -198,7 +198,7 @@ const ProjectsSection = () => {
                                                 href={project.link}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="size-9 rounded-lg bg-slate-700/50 hover:bg-cyan-500/20 border border-slate-600 hover:border-cyan-500 flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-all opacity-0 group-hover:opacity-100"
+                                                className="size-9 rounded-lg bg-slate-700/50 hover:bg-cyan-500/20 border border-slate-600 hover:border-cyan-500 flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-all opacity-100 lg:opacity-0 lg:group-hover:opacity-100 lg:translate-y-2 lg:group-hover:translate-y-0"
                                             >
                                                 <ExternalLink className="size-4" />
                                             </a>
@@ -210,7 +210,7 @@ const ProjectsSection = () => {
                                                         images: project.images,
                                                     })
                                                 }
-                                                className="size-9 rounded-lg bg-slate-700/50 hover:bg-cyan-500/20 border border-slate-600 hover:border-cyan-500 flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-all opacity-0 group-hover:opacity-100"
+                                                className="size-9 rounded-lg bg-slate-700/50 hover:bg-cyan-500/20 border border-slate-600 hover:border-cyan-500 flex items-center justify-center text-slate-400 hover:text-cyan-400 transition-all opacity-100 lg:opacity-0 lg:group-hover:opacity-100 lg:translate-y-2 lg:group-hover:translate-y-0"
                                             >
                                                 <ExternalLink className="size-4" />
                                             </button>
