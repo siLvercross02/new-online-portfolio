@@ -50,7 +50,8 @@ const ProjectsSection = () => {
             tech: ['NextJS', 'Bootstrap', 'Redux', 'Strapi'],
             image: InconWeb,
             highlights: ['Product catalogue pages', 'Company history & standards', '40-year manufacturing brand'],
-            link: 'https://www.inconindustrial.com/',
+            link: 'https://incon-website.vercel.app/',
+            // link: 'https://www.inconindustrial.com/',
             images: [],
             hasLiveDemo: true
         },

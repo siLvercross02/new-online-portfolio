@@ -7,7 +7,7 @@ const ExperienceSection = () => {
         {
             role: 'CRO Developer',
             company: 'Adm Indicia',
-            period: 'January 2024 - Present',
+            period: 'January 2024 - September 2026',
             location: 'Remote',
             achievements: [
                 'Implement and manage A/B tests and personalization campaigns using AB Tasty',
